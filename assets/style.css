@@ -1,0 +1,177 @@
+/* GENERAL */
+:root {
+    --s: 7px;
+    /*--s: .85vw;*/
+    --m: 8px;
+    /*--m: 1.13vw;*/
+    --margin: 7.5px;
+    --rowSpace: 180px;
+    --col1: calc(100% / 12);
+    --col2: calc(100% / 6);
+    --col3: calc(100% / 4);
+    --col4: calc(100% / 3);
+    --col5: calc((100% / 12) * 5);
+    --col6: calc(100% / 2);
+    --col8: calc((100% / 12) * 8);
+    --col9: calc((100% / 12) * 9);
+    --col10: calc((100% / 12) * 10);
+}
+
+html{min-height:100%;position:relative;overflow-x: hidden}
+html, body {max-width: 100%;overflow-x: hidden}
+
+body{
+  background: #b3b3b3;
+  height:100%;
+  margin: var(--margin);
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  text-rendering: optimizeSpeed;
+}
+
+h1, p{font-size: var(--s);line-height: 1.0625;color: white;-webkit-text-stroke: .25px white;padding: 2px}
+h2{font-size: var(--m);line-height: 0.9473684211;color: red;-webkit-text-stroke: .5px red}
+a{color: white; text-decoration: none}
+
+table{width: 100%}
+td{width: var(--col1); padding: 0 7.5px; vertical-align: top}
+
+video{width: 100%}
+img{width: 45%}
+
+@keyframes pulse {
+  from {border-color: white}
+  to {border-color: black}
+}
+
+@keyframes slide {
+  from {opacity: 1}
+  to {opacity: 0}
+}
+
+.blk{color: black; -webkit-text-stroke: .25px black}
+.diff{mix-blend-mode: difference}
+.bord{border: 1px solid white}
+.bord_b{border: 1px solid black}
+
+#txt{z-index: 50}
+#vid{
+  position: absolute;
+  top: 0;
+  z-index: -100;
+}
+
+#mobile_top, #mobile_dwn{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 33vh;
+  background-color: black;
+  z-index: 300;
+}
+#mobile_dwn{top: 66%; height: 34vh;}
+#mobile p, #splash p{
+  position: relative;
+  width: 90%;
+  height: 90%;
+  left: 5%;
+  top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  border: 1px solid white;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 18px;
+  color: red;
+  -webkit-text-stroke: .5px red;
+  animation: pulse 2s linear 0s infinite alternate;
+  text-align: center;
+}
+
+#splash{
+  position: fixed;
+  top: 33%;
+  left: 0;
+  width: 100vw;
+  height: 33vh;
+  background-color: black;
+  z-index: 500;
+  animation: slide 1s linear 4s 1;
+  opacity: 1;
+}
+
+::selection {
+  color: white;
+  background-color: black;
+}
+
+::-moz-selection {
+  color: white;
+  background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*MEDIA QUERY*/
+@media (min-width: 1px) {
+    :root {
+    --s: 7px;
+    --m: 8px;
+    --rowSpace: 70px;
+  }
+}
+
+
+
+
+
+@media (min-width: 800px) {
+    :root {
+    --s: 12px;
+    --m: 18px;
+    --rowSpace: 180px;
+  }
+}
+
+
+@media only screen and (orientation: landscape) {
+  #mobile{display: none}
+
+  #splash{
+    top: 0;
+    height: 100vh;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
